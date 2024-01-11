@@ -1,12 +1,7 @@
-# Event Management Application
+# Event Creation App - Lumix
 
 ## Overview
-This Event Management Application is a full-stack project designed to streamline the process of organizing and participating in events. It combines a React-based frontend with a serverless AWS backend, providing a seamless and scalable user experience.
-
-## Why Serverless and AWS Technologies?
-In this project, I've chosen to use AWS Lambda, Serverless, and DynamoDB for several compelling reasons:
-
-
+This is an event creation app - *"Lumix"* (borrowing inspiration from *Luma*, a popular event management app that took off recently). The frontend of the application is built with React, providing a UI for users to sign up, sign in, create new events, and view details of an event/list of events. The backend of the application powered by the AWS Serverless suite, specifically AWS Lambda functions for the web 'server' (which runs as needed) and DynamoDB for data store.  
 
 
 ## Tech Stack
@@ -35,7 +30,7 @@ In this project, I've chosen to use AWS Lambda, Serverless, and DynamoDB for sev
 2. Ensure AWS credentials are set up.
 3. Deploy the backend: `serverless deploy`.
 
----
+# Background
 
 I basically wanted to learn how to use AWS to host and serve my web application rather than [express.js](https://expressjs.com/). I wanted to specifically learn about AWS Serverless because I knew about [AWS Lambdas](https://aws.amazon.com/lambda/getting-started/) but wasn't really sure how it worked and didn't even understand what serverless was. 
 
