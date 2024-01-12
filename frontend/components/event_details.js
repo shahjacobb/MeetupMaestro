@@ -5,16 +5,13 @@ const EventDetails = ({ eventId }) => {
     const [event, setEvent] = useState(null);
 
     useEffect(() => {
-        const fetchEventDetails = async () => {
-            try {
-                const response = await axios.get(`/api/events/${eventId}`);
-                setEvent(response.data);
-            } catch (error) {
-                console.error('Error fetching event details:', error);
-            }
-        };
-
-        fetchEventDetails();
+        axios.get(`/api/events/${eventId}`)
+             .then(response => {
+                 setEvent(response.data);
+             })
+             .catch(error => {
+                 console.error('Error fetching event details:', error);
+             });
     }, [eventId]);
 
     if (!event) {
@@ -27,7 +24,7 @@ const EventDetails = ({ eventId }) => {
             <p>Date: {event.date}</p>
             <p>Location: {event.location}</p>
             <p>Description: {event.description}</p>
-            <p>Attendees: {event.attendees.join(', ')}</p>
+            {/* Attendees field removed to simplify */}
             {/* Add any additional details you want to display */}
         </div>
     );
