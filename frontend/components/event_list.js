@@ -19,16 +19,17 @@ const EventList = () => {
             });
     }, []);
 
-    // conditional rendering logic here
+    // If still loading, show a loading message
     if (isLoading) {
         return <div>Loading events...</div>;
     }
 
+    // If there was an error, show an error message
     if (error) {
         return <div>Error loading events.</div>;
     }
 
-    // okay, now we render
+    // Render the list of events
     return (
         <div>
             <h2>Event List</h2>
@@ -38,12 +39,11 @@ const EventList = () => {
                         <li key={event.id}>
                             <h3>{event.title}</h3>
                             <p>Date: {event.date}</p>
-                
                         </li>
                     ))}
                 </ul>
             ) : (
-                <div>No events available.</div>
+                <div> No events available ATM </div>
             )}
         </div>
     );
