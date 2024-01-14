@@ -24,8 +24,7 @@ const EventDetails = ({ eventId }) => {
             <p>Date: {event.date}</p>
             <p>Location: {event.location}</p>
             <p>Description: {event.description}</p>
-            {/* Attendees field removed to simplify */}
-            {/* Add any additional details you want to display */}
+            <p>Event Creator: {event.eventHost} </p>
         </div>
     );
 };

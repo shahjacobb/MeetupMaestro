@@ -1,31 +1,67 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import axios from 'axios';
 
-const EventDetails = ({ eventId }) => {
-    const [event, setEvent] = useState(null);
+const CreateEvent = () => {
+    const [eventData, setEventData] = useState({
+        title: '',
+        date: '',
+        location: '',
+        description: ''
+    });
 
-    useEffect(() => {
-        axios.get(`/api/events/${eventId}`)
-            .then(response => {
-                setEvent(response.data);
-            })
-            .catch(error => {
-                console.log('Error fetching event details:', error);
-            });
-    }, [eventId]);
+    const handleChange = (e) => {
+        setEventData({ ...eventData, [e.target.name]: e.target.value });
+    };
 
-    if (!event) {
-        return <div>Loading event details...</div>;
-    }
+    const handleSubmit = async (e) => {
+        e.preventDefault();
+        try {
+            await axios.post('/api/events', eventData);
+            alert('Event created successfully');
+            // Reset form or redirect user
+        } catch (error) {
+            console.error('Error creating event:', error);
+            alert('Error creating event');
+        }
+    };
 
     return (
-        <div>
-            <h2>{event.title}</h2>
-            <p>{event.date}</p>
-            <p>{event.location}</p>
-            <p>{event.description}</p>
-        </div>
+        <form onSubmit={handleSubmit}>
+            <input
+                type="text"
+                name="title"
+                value={eventData.title}
+                onChange={handleChange}
+                placeholder="Event Title"
+            />
+            <input
+                type="date"
+                name="date"
+                value={eventData.date}
+                onChange={handleChange}
+            />
+            <input
+                type="text"
+                name="location"
+                value={eventData.location}
+                onChange={handleChange}
+                placeholder="Location"
+            />
+            <textarea
+                name="description"
+                value={eventData.description}
+                onChange={handleChange}
+                placeholder="Description"
+            />
+            <textarea 
+                name = "host_name"
+                value= {eventData.hostName}
+                onChange={handleChange}
+                placeholder='Host of Event'
+                />
+            <button type="submit">Create Event</button>
+        </form>
     );
 };
 
-export default EventDetails;
+export default CreateEvent;
