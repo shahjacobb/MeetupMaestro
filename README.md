@@ -1,5 +1,12 @@
 # Event Creation App - Lumix
 
+## To Do
+- [x] Write lambda functions for all database logic: `createEvent.js`, `getEventDetails.js`, `getEvents.js`, `userSignIn.js`, `userSignUp.js`
+- [ ] Write React components to trigger lambdas
+- [ ] Style components
+- [x] Set up routes in API gateway.... almost forgot to do this
+- [x] Deploy API on API Gateway
+
 ## Overview
 This is an event creation app - *"Lumix"* (borrowing inspiration from *Luma*, a popular event management app that took off recently). The frontend of the application is built with React, providing a UI for users to sign up, sign in, create new events, and view details of an event/list of events. The backend of the application powered by the AWS Serverless suite, specifically AWS Lambda functions for the web 'server' (which runs as needed) and DynamoDB for data store.  
 
@@ -35,3 +42,4 @@ This is an event creation app - *"Lumix"* (borrowing inspiration from *Luma*, a 
 I basically wanted to learn how to use AWS to host and serve my web application rather than [express.js](https://expressjs.com/). I wanted to specifically learn about AWS Serverless because I knew about [AWS Lambdas](https://aws.amazon.com/lambda/getting-started/) but wasn't really sure how it worked and didn't even understand what serverless was. 
 
 Thanks to this project, I was able to get a lot of experience with the react component -> axios --> talk to endpoint --> trigger lambda function on AWS server --> send response back to front end --> render loop.
+
