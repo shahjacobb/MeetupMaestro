@@ -6,7 +6,8 @@ const CreateEvent = () => {
         title: '',
         date: '',
         location: '',
-        description: ''
+        description: '',
+        host_name: '',
     });
 
     const handleChange = (e) => {
