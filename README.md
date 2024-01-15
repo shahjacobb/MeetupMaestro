@@ -39,8 +39,8 @@ Thanks to this project, I was able to get a lot of experience with the react com
 
 ## To Do
 - [x] Write lambda functions for all database logic: `createEvent.js`, `getEventDetails.js`, `getEvents.js`, `userSignIn.js`, `userSignUp.js`
-- [ ] Write React components to trigger lambdas
-- [ ] Style components
+- [X] Write React components to trigger lambdas
+- [X] Create EventRegistrants table in DynamoDB
 - [x] Set up routes in API gateway.... almost forgot to do this
 - [x] Deploy API on API Gateway
 - [x] Got rid of `serverless.yml` and `react-router` plans. Added too much overhead and complexity for an app with basically 3 (technically, 5) functions. 
