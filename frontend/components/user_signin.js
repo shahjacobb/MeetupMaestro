@@ -1,24 +1,24 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 
-const UserSignUp = () => {
-    const [userData, setUserData] = useState({
+const UserSignIn = () => {
+    const [loginData, setLoginData] = useState({
         username: '',
         password: ''
     });
 
     const handleChange = (e) => {
-        setUserData({ ...userData, [e.target.name]: e.target.value });
+        setLoginData({ ...loginData, [e.target.name]: e.target.value });
     };
 
     const handleSubmit = async (e) => {
         e.preventDefault();
         try {
-            await axios.post('/api/users/signup', userData);
-            alert('Account created successfully')
+            const response = await axios.post('/api/users/signin', loginData);
+            alert('User signed in successfully');
         } catch (error) {
-            console.error('Error creating account:', error);
-            alert('Error creating account');
+            console.error('Error signing in:', error);
+            alert('Error signing in');
         }
     };
 
@@ -27,20 +27,20 @@ const UserSignUp = () => {
             <input
                 type="text"
                 name="username"
-                value={userData.username}
+                value={loginData.username}
                 onChange={handleChange}
                 placeholder="Username"
             />
             <input
                 type="password"
                 name="password"
-                value={userData.password}
+                value={loginData.password}
                 onChange={handleChange}
                 placeholder="Password"
             />
-            <button type="submit">Sign Up</button>
+            <button type="submit">Sign In</button>
         </form>
     );
 };
 
-export default UserSignUp;
+export default UserSignIn;
