@@ -1,9 +1,9 @@
-# Event Creation App - Lumix
+# Event Creation App - MeetupMaestro
 
 
 
 ## Overview
-This is an event creation app - *"Lumix"* (borrowing inspiration from *Luma*, a popular event management app that took off recently). The frontend of the application is built with React, providing a UI for users to sign up, sign in, create new events, and view details of an event/list of events. The backend of the application powered by the AWS Serverless suite, specifically AWS Lambda functions for the web 'server' (which runs as needed) and DynamoDB for data store.  
+*"MeetupMaestro"* (borrowing inspiration from *Luma*, a popular event management app that took off recently) is an event creation and management web application. The frontend of the application is built with React, providing a UI for users to sign up, sign in, create new events, and view details of an event/list of events. The backend of the application powered by the AWS Serverless suite, specifically AWS Lambda functions for the web 'server' (which runs as needed) and DynamoDB for data store.  
 
 
 ## Tech Stack
